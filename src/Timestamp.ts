@@ -1,74 +1,80 @@
 import { MONTHS, MINUTE, DAY, SECOND, DAYS, TOKENS } from './lib/constants';
 
-const tokens = new Map<string, (time: Date) => string>([
+interface TokenResolver {
+	(time: Date): string;
+}
+
+/* eslint-disable max-len */
+const tokens = new Map<string, TokenResolver>([
 	// Dates
-	['Y', time => String(time.getFullYear()).slice(2)],
-	['YY', time => String(time.getFullYear()).slice(2)],
-	['YYY', time => String(time.getFullYear())],
-	['YYYY', time => String(time.getFullYear())],
-	['Q', time => String((time.getMonth() + 1) / 3)],
-	['M', time => String(time.getMonth() + 1)],
-	['MM', time => String(time.getMonth() + 1).padStart(2, '0')],
-	['MMM', time => MONTHS[time.getMonth()]],
-	['MMMM', time => MONTHS[time.getMonth()]],
-	['D', time => String(time.getDate())],
-	['DD', time => String(time.getDate()).padStart(2, '0')],
-	['DDD', time => {
+	['Y', (time): string => String(time.getFullYear()).slice(2)],
+	['YY', (time): string => String(time.getFullYear()).slice(2)],
+	['YYY', (time): string => String(time.getFullYear())],
+	['YYYY', (time): string => String(time.getFullYear())],
+	['Q', (time): string => String((time.getMonth() + 1) / 3)],
+	['M', (time): string => String(time.getMonth() + 1)],
+	['MM', (time): string => String(time.getMonth() + 1).padStart(2, '0')],
+	['MMM', (time): string => MONTHS[time.getMonth()]],
+	['MMMM', (time): string => MONTHS[time.getMonth()]],
+	['D', (time): string => String(time.getDate())],
+	['DD', (time): string => String(time.getDate()).padStart(2, '0')],
+	['DDD', (time): string => {
 		const start = new Date(time.getFullYear(), 0, 0);
 		const diff = ((time.getMilliseconds() - start.getMilliseconds()) + (start.getTimezoneOffset() - time.getTimezoneOffset())) * MINUTE;
 		return String(Math.floor(diff / DAY));
 	}],
-	['DDDD', time => {
+	['DDDD', (time): string => {
 		const start = new Date(time.getFullYear(), 0, 0);
 		const diff = ((time.getMilliseconds() - start.getMilliseconds()) + (start.getTimezoneOffset() - time.getTimezoneOffset())) * MINUTE;
 		return String(Math.floor(diff / DAY));
 	}],
-	['d', time => {
+	['d', (time): string => {
 		const day = String(time.getDate());
 		if (day !== '11' && day.endsWith('1')) return `${day}st`;
 		if (day !== '12' && day.endsWith('2')) return `${day}nd`;
 		if (day !== '13' && day.endsWith('3')) return `${day}rd`;
 		return `${day}th`;
 	}],
-	['dd', time => DAYS[time.getDay()].slice(0, 2)],
-	['ddd', time => DAYS[time.getDay()].slice(0, 3)],
-	['dddd', time => DAYS[time.getDay()]],
-	['X', time => String(time.valueOf() / SECOND)],
-	['x', time => String(time.valueOf())],
+	['dd', (time): string => DAYS[time.getDay()].slice(0, 2)],
+	['ddd', (time): string => DAYS[time.getDay()].slice(0, 3)],
+	['dddd', (time): string => DAYS[time.getDay()]],
+	['X', (time): string => String(time.valueOf() / SECOND)],
+	['x', (time): string => String(time.valueOf())],
 
 	// Locales
-	['H', time => String(time.getHours())],
-	['HH', time => String(time.getHours()).padStart(2, '0')],
-	['h', time => String(time.getHours() % 12 || 12)],
-	['hh', time => String(time.getHours() % 12 || 12).padStart(2, '0')],
-	['a', time => time.getHours() < 12 ? 'am' : 'pm'],
-	['A', time => time.getHours() < 12 ? 'AM' : 'PM'],
-	['m', time => String(time.getMinutes())],
-	['mm', time => String(time.getMinutes()).padStart(2, '0')],
-	['s', time => String(time.getSeconds())],
-	['ss', time => String(time.getSeconds()).padStart(2, '0')],
-	['S', time => String(time.getMilliseconds())],
-	['SS', time => String(time.getMilliseconds()).padStart(2, '0')],
-	['SSS', time => String(time.getMilliseconds()).padStart(3, '0')],
-	['T', time => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['t', time => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')}:${String(time.getSeconds()).padStart(2, '0')} ${time.getHours() < 12 ? 'am' : 'pm'}`],
-	['L', time => `${String(time.getMonth() + 1).padStart(2, '0')}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],
-	['l', time => `${String(time.getMonth() + 1)}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],
-	['LL', time => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],
-	['ll', time => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],
-	['LLL', time => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['lll', time => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['LLLL', time => `${DAYS[time.getDay()]}, ${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['llll', time => `${DAYS[time.getDay()].slice(0, 3)} ${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['Z', time => {
+	['H', (time): string => String(time.getHours())],
+	['HH', (time): string => String(time.getHours()).padStart(2, '0')],
+	['h', (time): string => String(time.getHours() % 12 || 12)],
+	['hh', (time): string => String(time.getHours() % 12 || 12).padStart(2, '0')],
+	['a', (time): string => time.getHours() < 12 ? 'am' : 'pm'],
+	['A', (time): string => time.getHours() < 12 ? 'AM' : 'PM'],
+	['m', (time): string => String(time.getMinutes())],
+	['mm', (time): string => String(time.getMinutes()).padStart(2, '0')],
+	['s', (time): string => String(time.getSeconds())],
+	['ss', (time): string => String(time.getSeconds()).padStart(2, '0')],
+	['S', (time): string => String(time.getMilliseconds())],
+	['SS', (time): string => String(time.getMilliseconds()).padStart(2, '0')],
+	['SSS', (time): string => String(time.getMilliseconds()).padStart(3, '0')],
+	['T', (time): string => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
+	['t', (time): string => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')}:${String(time.getSeconds()).padStart(2, '0')} ${time.getHours() < 12 ? 'am' : 'pm'}`],
+	['L', (time): string => `${String(time.getMonth() + 1).padStart(2, '0')}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],
+	['l', (time): string => `${String(time.getMonth() + 1)}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],
+	['LL', (time): string => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],
+	['ll', (time): string => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],
+	['LLL', (time): string => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
+	['lll', (time): string => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
+	['LLLL', (time): string => `${DAYS[time.getDay()]}, ${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
+	['llll', (time): string => `${DAYS[time.getDay()].slice(0, 3)} ${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
+	['Z', (time): string => {
 		const offset = time.getTimezoneOffset();
 		return `${offset >= 0 ? '+' : '-'}${String(offset / -60).padStart(2, '0')}:${String(offset % 60).padStart(2, '0')}`;
 	}],
-	['ZZ', time => {
+	['ZZ', (time): string => {
 		const offset = time.getTimezoneOffset();
 		return `${offset >= 0 ? '+' : '-'}${String(offset / -60).padStart(2, '0')}:${String(offset % 60).padStart(2, '0')}`;
 	}]
 ]);
+/* eslint-enable max-len */
 
 export type TimeResolvable = Date | number | string;
 
@@ -207,14 +213,13 @@ export class Timestamp {
 	 * @since 0.5.0
 	 * @param time The time to parse
 	 */
-	private static _resolveDate(time: TimeResolvable) {
+	private static _resolveDate(time: TimeResolvable): Date {
 		return time instanceof Date ? time : new Date(time);
 	}
 
 	/**
 	 * The timezone offset in seconds.
 	 * @since 0.5.0
-	 * @static
 	 */
 	public static timezoneOffset = new Date().getTimezoneOffset() * 60000;
 
