@@ -1,4 +1,8 @@
 import ava from 'ava';
-import Util from '../dist';
+import { TestTimestamp } from './lib/shared';
 
-//... others
+ava('basic', (test): void => {
+	const timestamp = new TestTimestamp('');
+	const parsedTemplate = timestamp.getParsedTemplate();
+	test.is(parsedTemplate.length, 0);
+});
