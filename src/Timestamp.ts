@@ -59,11 +59,13 @@ const tokens = new Map<string, TokenResolver>([
 	['llll', (time): string => `${DAYS[time.getDay()].slice(0, 3)} ${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
 	['Z', (time): string => {
 		const offset = time.getTimezoneOffset();
-		return `${offset >= 0 ? '+' : '-'}${String(offset / -60).padStart(2, '0')}:${String(offset % 60).padStart(2, '0')}`;
+		const unsigned = offset >= 0, absolute = Math.abs(offset);
+		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}],
 	['ZZ', (time): string => {
 		const offset = time.getTimezoneOffset();
-		return `${offset >= 0 ? '+' : '-'}${String(offset / -60).padStart(2, '0')}:${String(offset % 60).padStart(2, '0')}`;
+		const unsigned = offset >= 0, absolute = Math.abs(offset);
+		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}]
 ]);
 /* eslint-enable max-len */
