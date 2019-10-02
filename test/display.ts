@@ -276,6 +276,18 @@ ava.skip('display(ZZ)', (test): void => {
 	test.is(formatted, '-01:00');
 });
 
+ava('display-number-overload(LLLL)', (test): void => {
+	const timestamp = new Timestamp('LLLL');
+	const formatted = timestamp.display(date.valueOf());
+	test.is(formatted, 'Saturday, March 09, 2019 4:20 PM');
+});
+
+ava('display-string-overload(LLLL)', (test): void => {
+	const timestamp = new Timestamp('LLLL');
+	const formatted = timestamp.display(date.toUTCString());
+	test.is(formatted, 'Saturday, March 09, 2019 4:20 PM');
+});
+
 ava('display(hh:mm:ss)', (test): void => {
 	const timestamp = new Timestamp('hh:mm:ss');
 	const formatted = timestamp.display(date);
@@ -286,4 +298,19 @@ ava('display(hh[ hours, ]mm[ minutes])', (test): void => {
 	const timestamp = new Timestamp('hh[ hours, ]mm[ minutes]');
 	const formatted = timestamp.display(date);
 	test.is(formatted, '04 hours, 20 minutes');
+});
+
+ava('display-arbitrary-date-overload(LLLL)', (test): void => {
+	const formatted = Timestamp.displayArbitrary('LLLL', date.valueOf());
+	test.is(formatted, 'Saturday, March 09, 2019 4:20 PM');
+});
+
+ava('display-arbitrary-number-overload(LLLL)', (test): void => {
+	const formatted = Timestamp.displayArbitrary('LLLL', date.valueOf());
+	test.is(formatted, 'Saturday, March 09, 2019 4:20 PM');
+});
+
+ava('display-arbitrary-string-overload(LLLL)', (test): void => {
+	const formatted = Timestamp.displayArbitrary('LLLL', date.toUTCString());
+	test.is(formatted, 'Saturday, March 09, 2019 4:20 PM');
 });

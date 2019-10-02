@@ -51,3 +51,15 @@ ava('template(hh[ hours, ]mm[ minutes])', (test): void => {
 		type: 'literal'
 	}]);
 });
+
+ava('template(llllll)', (test): void => {
+	const timestamp = new Timestamp('llllll');
+	const parsedTemplate = extractParsedTemplate(timestamp);
+	test.deepEqual(parsedTemplate, [{
+		content: null,
+		type: 'llll'
+	}, {
+		content: null,
+		type: 'll'
+	}]);
+});
