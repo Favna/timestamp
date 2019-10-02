@@ -76,18 +76,16 @@ ava('display(DD)', (test): void => {
 	test.is(formatted, '09');
 });
 
-// Seems to be broken, figure out why later.
-ava.skip('display(DDD)', (test): void => {
+ava('display(DDD)', (test): void => {
 	const timestamp = new Timestamp('DDD');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '0');
+	test.is(formatted, '68');
 });
 
-// Seems to be broken, figure out why later.
-ava.skip('display(DDDD)', (test): void => {
+ava('display(DDDD)', (test): void => {
 	const timestamp = new Timestamp('DDDD');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '0');
+	test.is(formatted, '68');
 });
 
 ava('display(d)', (test): void => {

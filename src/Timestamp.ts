@@ -1,4 +1,4 @@
-import { MONTHS, MINUTE, DAY, SECOND, DAYS, TOKENS } from './lib/constants';
+import { MONTHS, DAY, SECOND, DAYS, TOKENS } from './lib/constants';
 
 interface TokenResolver {
 	(time: Date): string;
@@ -18,16 +18,8 @@ const tokens = new Map<string, TokenResolver>([
 	['MMMM', (time): string => MONTHS[time.getMonth()]],
 	['D', (time): string => String(time.getDate())],
 	['DD', (time): string => String(time.getDate()).padStart(2, '0')],
-	['DDD', (time): string => {
-		const start = new Date(time.getFullYear(), 0, 0);
-		const diff = ((time.getMilliseconds() - start.getMilliseconds()) + (start.getTimezoneOffset() - time.getTimezoneOffset())) * MINUTE;
-		return String(Math.floor(diff / DAY));
-	}],
-	['DDDD', (time): string => {
-		const start = new Date(time.getFullYear(), 0, 0);
-		const diff = ((time.getMilliseconds() - start.getMilliseconds()) + (start.getTimezoneOffset() - time.getTimezoneOffset())) * MINUTE;
-		return String(Math.floor(diff / DAY));
-	}],
+	['DDD', (time): string => String(Math.floor((time.getTime() - new Date(time.getFullYear(), 0, 0).getTime()) / DAY))],
+	['DDDD', (time): string => String(Math.floor((time.getTime() - new Date(time.getFullYear(), 0, 0).getTime()) / DAY))],
 	['d', (time): string => {
 		const day = String(time.getDate());
 		if (day !== '11' && day.endsWith('1')) return `${day}st`;
