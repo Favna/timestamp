@@ -80,7 +80,7 @@ export type TimeResolvable = Date | number | string;
 
 export interface TimestampTemplateEntry {
 	type: string;
-	content?: string;
+	content: string | null;
 }
 
 /**
