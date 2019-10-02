@@ -157,7 +157,7 @@ export class Timestamp {
 	 */
 	public static utc(time: Date | number | string = new Date()): Date {
 		time = Timestamp._resolveDate(time);
-		return new Date(time.valueOf() + Timestamp.timezoneOffset);
+		return new Date(time.valueOf() + (time.getTimezoneOffset() * 60000));
 	}
 
 	/**
@@ -210,11 +210,5 @@ export class Timestamp {
 	private static _resolveDate(time: TimeResolvable): Date {
 		return time instanceof Date ? time : new Date(time);
 	}
-
-	/**
-	 * The timezone offset in seconds.
-	 * @since 0.5.0
-	 */
-	public static timezoneOffset = new Date().getTimezoneOffset() * 60000;
 
 }

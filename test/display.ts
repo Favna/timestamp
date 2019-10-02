@@ -266,14 +266,14 @@ ava('display(llll)', (test): void => {
 ava.skip('display(Z)', (test): void => {
 	const timestamp = new Timestamp('Z');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '-02:00');
+	test.is(formatted, '-01:00');
 });
 
 // Timezone sensitive, figure out how to test this later.
 ava.skip('display(ZZ)', (test): void => {
 	const timestamp = new Timestamp('ZZ');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '-02:00');
+	test.is(formatted, '-01:00');
 });
 
 ava('display(hh:mm:ss)', (test): void => {
