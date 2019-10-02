@@ -97,7 +97,7 @@ export class Timestamp {
 	/**
 	 * @since 0.5.0
 	 */
-	protected parsedTemplate: TimestampTemplateEntry[];
+	private _template: TimestampTemplateEntry[];
 
 	/**
 	 * Starts a new Timestamp and parses the pattern.
@@ -106,7 +106,7 @@ export class Timestamp {
 	 */
 	public constructor(pattern: string) {
 		this.pattern = pattern;
-		this.parsedTemplate = Timestamp._parse(pattern);
+		this._template = Timestamp._parse(pattern);
 	}
 
 	/**
@@ -115,7 +115,7 @@ export class Timestamp {
 	 * @param time The time to display
 	 */
 	public display(time: TimeResolvable = new Date()): string {
-		return Timestamp._display(this.parsedTemplate, time);
+		return Timestamp._display(this._template, time);
 	}
 
 	/**
@@ -124,7 +124,7 @@ export class Timestamp {
 	 * @param time The time to display in utc
 	 */
 	public displayUTC(time: TimeResolvable): string {
-		return Timestamp._display(this.parsedTemplate, Timestamp.utc(time));
+		return Timestamp._display(this._template, Timestamp.utc(time));
 	}
 
 	/**
@@ -135,7 +135,7 @@ export class Timestamp {
 	 */
 	public edit(pattern: string): this {
 		this.pattern = pattern;
-		this.parsedTemplate = Timestamp._parse(pattern);
+		this._template = Timestamp._parse(pattern);
 		return this;
 	}
 

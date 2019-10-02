@@ -1,15 +1,21 @@
 import ava from 'ava';
-import { TestTimestamp } from './lib/shared';
+import { Timestamp, TimestampTemplateEntry } from '../dist';
+
+function extractParsedTemplate(timestamp: Timestamp): TimestampTemplateEntry[] {
+	// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+	// @ts-ignore 2341
+	return timestamp._template;
+}
 
 ava('template(empty)', (test): void => {
-	const timestamp = new TestTimestamp('');
-	const parsedTemplate = timestamp.getParsedTemplate();
+	const timestamp = new Timestamp('');
+	const parsedTemplate = extractParsedTemplate(timestamp);
 	test.deepEqual(parsedTemplate, []);
 });
 
 ava('template(hh:mm:ss)', (test): void => {
-	const timestamp = new TestTimestamp('hh:mm:ss');
-	const parsedTemplate = timestamp.getParsedTemplate();
+	const timestamp = new Timestamp('hh:mm:ss');
+	const parsedTemplate = extractParsedTemplate(timestamp);
 	test.deepEqual(parsedTemplate, [{
 		content: null,
 		type: 'hh'
@@ -29,8 +35,8 @@ ava('template(hh:mm:ss)', (test): void => {
 });
 
 ava('template(hh[ hours, ]mm[ minutes])', (test): void => {
-	const timestamp = new TestTimestamp('hh[ hours, ]mm[ minutes]');
-	const parsedTemplate = timestamp.getParsedTemplate();
+	const timestamp = new Timestamp('hh[ hours, ]mm[ minutes]');
+	const parsedTemplate = extractParsedTemplate(timestamp);
 	test.deepEqual(parsedTemplate, [{
 		content: null,
 		type: 'hh'
