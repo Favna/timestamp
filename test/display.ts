@@ -115,13 +115,13 @@ ava('display(dddd)', (test): void => {
 ava('display(X)', (test): void => {
 	const timestamp = new Timestamp('X');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '1552144835.001');
+	test.is(formatted, '1552148435.001');
 });
 
 ava('display(x)', (test): void => {
 	const timestamp = new Timestamp('x');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '1552144835001');
+	test.is(formatted, '1552148435001');
 });
 
 ava('display(H)', (test): void => {
