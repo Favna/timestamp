@@ -1,0 +1,1369 @@
+{
+	"id": 0,
+	"name": "@klasa/timestamp",
+	"kind": 0,
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 9,
+			"name": "\"Timestamp\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/src/Timestamp.ts",
+			"children": [
+				{
+					"id": 16,
+					"name": "Timestamp",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Klasa's Timestamp class, parses the pattern once, displays the desired Date or UNIX timestamp with the selected pattern."
+					},
+					"children": [
+						{
+							"id": 19,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Starts a new Timestamp and parses the pattern.",
+								"tags": [
+									{
+										"tag": "since",
+										"text": "0.5.0"
+									}
+								]
+							},
+							"signatures": [
+								{
+									"id": 20,
+									"name": "new Timestamp",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Starts a new Timestamp and parses the pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 21,
+											"name": "pattern",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "The pattern to parse\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 16,
+										"name": "Timestamp"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 96,
+									"character": 45
+								}
+							]
+						},
+						{
+							"id": 18,
+							"name": "_template",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"comment": {
+								"tags": [
+									{
+										"tag": "since",
+										"text": "0.5.0\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 96,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 13,
+									"name": "TimestampTemplateEntry"
+								}
+							}
+						},
+						{
+							"id": 17,
+							"name": "pattern",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "The raw pattern",
+								"tags": [
+									{
+										"tag": "since",
+										"text": "0.5.0\n"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 91,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 22,
+							"name": "display",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 23,
+									"name": "display",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Display the current date with the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 24,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to display\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 55,
+												"name": "TimeResolvable"
+											},
+											"defaultValue": "new Date()"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 113,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 25,
+							"name": "displayUTC",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 26,
+									"name": "displayUTC",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Display the current date utc with the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 27,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to display in utc\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 55,
+												"name": "TimeResolvable"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 122,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 28,
+							"name": "edit",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 29,
+									"name": "edit",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Edits the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											},
+											{
+												"tag": "chainable",
+												"text": "\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 30,
+											"name": "pattern",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The new pattern for this instance"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "this"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 132,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 31,
+							"name": "toString",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 32,
+									"name": "toString",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Defines the toString behavior of Timestamp."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 141,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 44,
+							"name": "_display",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 45,
+									"name": "_display",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Display the current date with the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 46,
+											"name": "template",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The pattern to parse"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 13,
+													"name": "TimestampTemplateEntry"
+												}
+											}
+										},
+										{
+											"id": 47,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to display\n"
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "Date"
+													},
+													{
+														"type": "intrinsic",
+														"name": "number"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 181,
+									"character": 24
+								}
+							]
+						},
+						{
+							"id": 48,
+							"name": "_parse",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 49,
+									"name": "_parse",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Parses the pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 50,
+											"name": "pattern",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The pattern to parse\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 13,
+											"name": "TimestampTemplateEntry"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 193,
+									"character": 22
+								}
+							]
+						},
+						{
+							"id": 51,
+							"name": "_resolveDate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 52,
+									"name": "_resolveDate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Resolves a date.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 53,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to parse\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 55,
+												"name": "TimeResolvable"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Date"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 222,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 33,
+							"name": "displayArbitrary",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 34,
+									"name": "displayArbitrary",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Display the current date with the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 35,
+											"name": "pattern",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The pattern to parse"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 36,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to display\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 55,
+												"name": "TimeResolvable"
+											},
+											"defaultValue": "new Date()"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 151,
+									"character": 31
+								}
+							]
+						},
+						{
+							"id": 37,
+							"name": "displayUTCArbitrary",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 38,
+									"name": "displayUTCArbitrary",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Display the current date utc with the current pattern.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 39,
+											"name": "pattern",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The pattern to parse"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 40,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The time to display\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 55,
+												"name": "TimeResolvable"
+											},
+											"defaultValue": "new Date()"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 161,
+									"character": 34
+								}
+							]
+						},
+						{
+							"id": 41,
+							"name": "utc",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 42,
+									"name": "utc",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Creates a UTC Date object to work with.",
+										"tags": [
+											{
+												"tag": "since",
+												"text": "0.5.0"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 43,
+											"name": "time",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "The date to convert to utc\n"
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "Date"
+													},
+													{
+														"type": "intrinsic",
+														"name": "number"
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											},
+											"defaultValue": "new Date()"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Date"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 170,
+									"character": 18
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								19
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								18,
+								17
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								22,
+								25,
+								28,
+								31,
+								44,
+								48,
+								51,
+								33,
+								37,
+								41
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Timestamp.ts",
+							"line": 85,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 13,
+					"name": "TimestampTemplateEntry",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 15,
+							"name": "content",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 79,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "null"
+									}
+								]
+							}
+						},
+						{
+							"id": 14,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "Timestamp.ts",
+									"line": 78,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								15,
+								14
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Timestamp.ts",
+							"line": 77,
+							"character": 39
+						}
+					]
+				},
+				{
+					"id": 10,
+					"name": "TokenResolver",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 11,
+							"name": "__call",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 12,
+									"name": "time",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Date"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Timestamp.ts",
+							"line": 3,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 55,
+					"name": "TimeResolvable",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Timestamp.ts",
+							"line": 75,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "Date"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 54,
+					"name": "tokens",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Timestamp.ts",
+							"line": 8,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "reference",
+								"id": 10,
+								"name": "TokenResolver"
+							}
+						],
+						"name": "Map"
+					},
+					"defaultValue": "new Map<string, TokenResolver>([\n\t// Dates\n\t['Y', (time): string => String(time.getFullYear()).slice(2)],\n\t['YY', (time): string => String(time.getFullYear()).slice(2)],\n\t['YYY', (time): string => String(time.getFullYear())],\n\t['YYYY', (time): string => String(time.getFullYear())],\n\t['Q', (time): string => String((time.getMonth() + 1) / 3)],\n\t['M', (time): string => String(time.getMonth() + 1)],\n\t['MM', (time): string => String(time.getMonth() + 1).padStart(2, '0')],\n\t['MMM', (time): string => MONTHS[time.getMonth()]],\n\t['MMMM', (time): string => MONTHS[time.getMonth()]],\n\t['D', (time): string => String(time.getDate())],\n\t['DD', (time): string => String(time.getDate()).padStart(2, '0')],\n\t['DDD', (time): string => String(Math.floor((time.getTime() - new Date(time.getFullYear(), 0, 0).getTime()) / DAY))],\n\t['DDDD', (time): string => String(Math.floor((time.getTime() - new Date(time.getFullYear(), 0, 0).getTime()) / DAY))],\n\t['d', (time): string => {\n\t\tconst day = String(time.getDate());\n\t\tif (day !== '11' && day.endsWith('1')) return `${day}st`;\n\t\tif (day !== '12' && day.endsWith('2')) return `${day}nd`;\n\t\tif (day !== '13' && day.endsWith('3')) return `${day}rd`;\n\t\treturn `${day}th`;\n\t}],\n\t['dd', (time): string => DAYS[time.getDay()].slice(0, 2)],\n\t['ddd', (time): string => DAYS[time.getDay()].slice(0, 3)],\n\t['dddd', (time): string => DAYS[time.getDay()]],\n\t['X', (time): string => String(time.valueOf() / SECOND)],\n\t['x', (time): string => String(time.valueOf())],\n\n\t// Locales\n\t['H', (time): string => String(time.getHours())],\n\t['HH', (time): string => String(time.getHours()).padStart(2, '0')],\n\t['h', (time): string => String(time.getHours() % 12 || 12)],\n\t['hh', (time): string => String(time.getHours() % 12 || 12).padStart(2, '0')],\n\t['a', (time): string => time.getHours() < 12 ? 'am' : 'pm'],\n\t['A', (time): string => time.getHours() < 12 ? 'AM' : 'PM'],\n\t['m', (time): string => String(time.getMinutes())],\n\t['mm', (time): string => String(time.getMinutes()).padStart(2, '0')],\n\t['s', (time): string => String(time.getSeconds())],\n\t['ss', (time): string => String(time.getSeconds()).padStart(2, '0')],\n\t['S', (time): string => String(time.getMilliseconds())],\n\t['SS', (time): string => String(time.getMilliseconds()).padStart(2, '0')],\n\t['SSS', (time): string => String(time.getMilliseconds()).padStart(3, '0')],\n\t['T', (time): string => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],\n\t['t', (time): string => `${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')}:${String(time.getSeconds()).padStart(2, '0')} ${time.getHours() < 12 ? 'am' : 'pm'}`],\n\t['L', (time): string => `${String(time.getMonth() + 1).padStart(2, '0')}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],\n\t['l', (time): string => `${String(time.getMonth() + 1)}/${String(time.getDate()).padStart(2, '0')}/${String(time.getFullYear())}`],\n\t['LL', (time): string => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],\n\t['ll', (time): string => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())}`],\n\t['LLL', (time): string => `${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],\n\t['lll', (time): string => `${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],\n\t['LLLL', (time): string => `${DAYS[time.getDay()]}, ${MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],\n\t['llll', (time): string => `${DAYS[time.getDay()].slice(0, 3)} ${MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],\n\t['Z', (time): string => {\n\t\tconst offset = time.getTimezoneOffset();\n\t\tconst unsigned = offset >= 0, absolute = Math.abs(offset);\n\t\t/* istanbul ignore next: whether it's signed or unsigned, depends on where the machine is, I cannot control this. */\n\t\treturn `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;\n\t}],\n\t['ZZ', (time): string => {\n\t\tconst offset = time.getTimezoneOffset();\n\t\tconst unsigned = offset >= 0, absolute = Math.abs(offset);\n\t\t/* istanbul ignore next: whether it's signed or unsigned, depends on where the machine is, I cannot control this. */\n\t\treturn `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;\n\t}]\n])"
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						16
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						13,
+						10
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						55
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						54
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Timestamp.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 56,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/src/index.ts",
+			"children": [
+				{
+					"id": 57,
+					"name": "TimeResolvable",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 55
+				},
+				{
+					"id": 59,
+					"name": "Timestamp",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 16
+				},
+				{
+					"id": 58,
+					"name": "TimestampTemplateEntry",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 13
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						57,
+						59,
+						58
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"lib/constants\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/src/lib/constants.ts",
+			"children": [
+				{
+					"id": 5,
+					"name": "DAY",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 4,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "HOUR * 24"
+				},
+				{
+					"id": 6,
+					"name": "DAYS",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 6,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					},
+					"defaultValue": "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']"
+				},
+				{
+					"id": 4,
+					"name": "HOUR",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 3,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "MINUTE * 60"
+				},
+				{
+					"id": 3,
+					"name": "MINUTE",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 2,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "SECOND * 60"
+				},
+				{
+					"id": 7,
+					"name": "MONTHS",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 7,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					},
+					"defaultValue": "['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']"
+				},
+				{
+					"id": 2,
+					"name": "SECOND",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 1,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "1000"
+					},
+					"defaultValue": "1000"
+				},
+				{
+					"id": 8,
+					"name": "TOKENS",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/constants.ts",
+							"line": 9,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						],
+						"name": "Map"
+					},
+					"defaultValue": "new Map<string, number>([\n\t['Y', 4],\n\t['Q', 1],\n\t['M', 4],\n\t['D', 4],\n\t['d', 4],\n\t['X', 1],\n\t['x', 1],\n\t['H', 2],\n\t['h', 2],\n\t['a', 1],\n\t['A', 1],\n\t['m', 2],\n\t['s', 2],\n\t['S', 3],\n\t['Z', 2],\n\t['l', 4],\n\t['L', 4],\n\t['T', 1],\n\t['t', 1]\n])"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						5,
+						6,
+						4,
+						3,
+						7,
+						2,
+						8
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lib/constants.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"kind": 1,
+			"children": [
+				9,
+				56,
+				1
+			]
+		}
+	]
+}
