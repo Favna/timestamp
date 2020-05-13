@@ -115,13 +115,13 @@ ava('display(dddd)', (test): void => {
 ava('display(X)', (test): void => {
 	const timestamp = new Timestamp('X');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '1552148435.001');
+	test.is(formatted, (date.getTime() / 1000).toString());
 });
 
 ava('display(x)', (test): void => {
 	const timestamp = new Timestamp('x');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '1552148435001');
+	test.is(formatted, date.getTime().toString());
 });
 
 ava('display(H)', (test): void => {
@@ -262,18 +262,24 @@ ava('display(llll)', (test): void => {
 	test.is(formatted, 'Sat Mar 09, 2019 4:20 PM');
 });
 
-// Timezone sensitive, figure out how to test this later.
-ava.skip('display(Z)', (test): void => {
+ava('display-morning(Z)', (test): void => {
 	const timestamp = new Timestamp('Z');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '-01:00');
+
+	const offset = date.getTimezoneOffset();
+	const unsigned = offset >= 0, absolute = Math.abs(offset);
+	const expected = `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
+	test.is(formatted, expected);
 });
 
-// Timezone sensitive, figure out how to test this later.
-ava.skip('display(ZZ)', (test): void => {
+ava('display-morning(ZZ)', (test): void => {
 	const timestamp = new Timestamp('ZZ');
 	const formatted = timestamp.display(date);
-	test.is(formatted, '-01:00');
+
+	const offset = date.getTimezoneOffset();
+	const unsigned = offset >= 0, absolute = Math.abs(offset);
+	const expected = `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
+	test.is(formatted, expected);
 });
 
 ava('display-number-overload(LLLL)', (test): void => {
@@ -298,6 +304,72 @@ ava('display(hh[ hours, ]mm[ minutes])', (test): void => {
 	const timestamp = new Timestamp('hh[ hours, ]mm[ minutes]');
 	const formatted = timestamp.display(date);
 	test.is(formatted, '04 hours, 20 minutes');
+});
+
+ava('display(d) [day: 01]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 1, 16, 20, 35, 1));
+	test.is(formatted, '1st');
+});
+
+ava('display(d) [day: 11]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 11, 16, 20, 35, 1));
+	test.is(formatted, '11th');
+});
+
+ava('display(d) [day: 21]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 21, 16, 20, 35, 1));
+	test.is(formatted, '21st');
+});
+
+ava('display(d) [day: 02]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 2, 16, 20, 35, 1));
+	test.is(formatted, '2nd');
+});
+
+ava('display(d) [day: 12]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 12, 16, 20, 35, 1));
+	test.is(formatted, '12th');
+});
+
+ava('display(d) [day: 22]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 22, 16, 20, 35, 1));
+	test.is(formatted, '22nd');
+});
+
+ava('display(d) [day: 03]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 3, 16, 20, 35, 1));
+	test.is(formatted, '3rd');
+});
+
+ava('display(d) [day: 13]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 13, 16, 20, 35, 1));
+	test.is(formatted, '13th');
+});
+
+ava('display(d) [day: 23]', (test): void => {
+	const timestamp = new Timestamp('d');
+	const formatted = timestamp.display(new Date(2019, 2, 23, 16, 20, 35, 1));
+	test.is(formatted, '23rd');
+});
+
+ava('display-toString(H:m)', (test): void => {
+	const timestamp = new Timestamp('H:m');
+	const localDate = new Date();
+	test.is(timestamp.toString(), `${localDate.getHours()}:${localDate.getMinutes()}`);
+});
+
+ava('display-arbitrary-default(H:m)', (test): void => {
+	const formatted = Timestamp.displayArbitrary('H:m');
+	const localDate = new Date();
+	test.is(formatted, `${localDate.getHours()}:${localDate.getMinutes()}`);
 });
 
 ava('display-arbitrary-date-overload(LLLL)', (test): void => {

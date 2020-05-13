@@ -63,3 +63,49 @@ ava('template(llllll)', (test): void => {
 		type: 'll'
 	}]);
 });
+
+ava('template-edit(llllll -> llll)', (test): void => {
+	test.plan(3);
+
+	const timestamp = new Timestamp('llllll');
+	const parsedTemplate = extractParsedTemplate(timestamp);
+	test.deepEqual(parsedTemplate, [{
+		content: null,
+		type: 'llll'
+	}, {
+		content: null,
+		type: 'll'
+	}]);
+
+	test.is(timestamp.edit('llll'), timestamp);
+
+	const editedParsedTemplate = extractParsedTemplate(timestamp);
+	test.deepEqual(editedParsedTemplate, [{
+		content: null,
+		type: 'llll'
+	}]);
+});
+
+// You'll probably wonder why did I put "kaira" as written in Japanese, but it's
+// because I couldn't think of characters that are guaranteed not to be
+// supported in the foreseeable future.
+ava('template(カイラ)', (test): void => {
+	const timestamp = new Timestamp('カイラ');
+	const parsedTemplate = extractParsedTemplate(timestamp);
+	test.deepEqual(parsedTemplate, [{
+		content: 'カイラ',
+		type: 'literal'
+	}]);
+});
+
+ava('template(][)', (test): void => {
+	const timestamp = new Timestamp('][');
+	const parsedTemplate = extractParsedTemplate(timestamp);
+	test.deepEqual(parsedTemplate, [{
+		content: ']',
+		type: 'literal'
+	}, {
+		content: '[',
+		type: 'literal'
+	}]);
+});

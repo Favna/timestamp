@@ -60,11 +60,13 @@ const tokens = new Map<string, TokenResolver>([
 	['Z', (time): string => {
 		const offset = time.getTimezoneOffset();
 		const unsigned = offset >= 0, absolute = Math.abs(offset);
+		/* istanbul ignore next: whether it's signed or unsigned, depends on where the machine is, I cannot control this. */
 		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}],
 	['ZZ', (time): string => {
 		const offset = time.getTimezoneOffset();
 		const unsigned = offset >= 0, absolute = Math.abs(offset);
+		/* istanbul ignore next: whether it's signed or unsigned, depends on where the machine is, I cannot control this. */
 		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}]
 ]);
@@ -151,6 +153,16 @@ export class Timestamp {
 	}
 
 	/**
+	 * Display the current date utc with the current pattern.
+	 * @since 0.5.0
+	 * @param pattern The pattern to parse
+	 * @param time The time to display
+	 */
+	public static displayUTCArbitrary(pattern: string, time: TimeResolvable = new Date()): string {
+		return Timestamp._display(Timestamp._parse(pattern), Timestamp.utc(time));
+	}
+
+	/**
 	 * Creates a UTC Date object to work with.
 	 * @since 0.5.0
 	 * @param time The date to convert to utc
@@ -191,7 +203,7 @@ export class Timestamp {
 			} else if (currentChar === '[') {
 				while (i + 1 < pattern.length && pattern[i + 1] !== ']') current += pattern[++i];
 				i++;
-				template.push({ type: 'literal', content: current });
+				template.push({ type: 'literal', content: current || '[' });
 			} else {
 				current += currentChar;
 				while (i + 1 < pattern.length && !TOKENS.has(pattern[i + 1]) && pattern[i + 1] !== '[') current += pattern[++i];
