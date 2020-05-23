@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { Timestamp, TimestampTemplateEntry } from '../dist';
+import { Timestamp, TimestampTemplateEntry } from '../src';
 
 function extractParsedTemplate(timestamp: Timestamp): TimestampTemplateEntry[] {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
