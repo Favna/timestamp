@@ -7,7 +7,7 @@
 	"children": [
 		{
 			"id": 9,
-			"name": "\"Timestamp\"",
+			"name": "\"src/Timestamp\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -90,7 +90,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 96,
 									"character": 45
 								}
@@ -115,7 +115,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 96,
 									"character": 18
 								}
@@ -149,7 +149,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 91,
 									"character": 15
 								}
@@ -214,7 +214,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 113,
 									"character": 15
 								}
@@ -274,7 +274,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 122,
 									"character": 18
 								}
@@ -337,7 +337,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 132,
 									"character": 12
 								}
@@ -372,7 +372,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 141,
 									"character": 16
 								}
@@ -465,7 +465,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 181,
 									"character": 24
 								}
@@ -529,7 +529,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 193,
 									"character": 22
 								}
@@ -590,7 +590,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 222,
 									"character": 28
 								}
@@ -668,7 +668,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 151,
 									"character": 31
 								}
@@ -746,7 +746,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 161,
 									"character": 34
 								}
@@ -820,7 +820,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 170,
 									"character": 18
 								}
@@ -862,7 +862,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "Timestamp.ts",
+							"fileName": "src/Timestamp.ts",
 							"line": 85,
 							"character": 22
 						}
@@ -887,7 +887,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 79,
 									"character": 8
 								}
@@ -916,7 +916,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Timestamp.ts",
+									"fileName": "src/Timestamp.ts",
 									"line": 78,
 									"character": 5
 								}
@@ -939,7 +939,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "Timestamp.ts",
+							"fileName": "src/Timestamp.ts",
 							"line": 77,
 							"character": 39
 						}
@@ -979,7 +979,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "Timestamp.ts",
+							"fileName": "src/Timestamp.ts",
 							"line": 3,
 							"character": 23
 						}
@@ -995,7 +995,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "Timestamp.ts",
+							"fileName": "src/Timestamp.ts",
 							"line": 75,
 							"character": 26
 						}
@@ -1028,7 +1028,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "Timestamp.ts",
+							"fileName": "src/Timestamp.ts",
 							"line": 8,
 							"character": 12
 						}
@@ -1084,7 +1084,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "Timestamp.ts",
+					"fileName": "src/Timestamp.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -1092,7 +1092,7 @@
 		},
 		{
 			"id": 56,
-			"name": "\"index\"",
+			"name": "\"src/index\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -1144,7 +1144,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "index.ts",
+					"fileName": "src/index.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -1152,7 +1152,7 @@
 		},
 		{
 			"id": 1,
-			"name": "\"lib/constants\"",
+			"name": "\"src/lib/constants\"",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {
@@ -1171,7 +1171,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 4,
 							"character": 16
 						}
@@ -1193,7 +1193,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 6,
 							"character": 17
 						}
@@ -1218,7 +1218,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 3,
 							"character": 17
 						}
@@ -1240,7 +1240,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 2,
 							"character": 19
 						}
@@ -1262,7 +1262,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 7,
 							"character": 19
 						}
@@ -1287,7 +1287,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 1,
 							"character": 19
 						}
@@ -1309,7 +1309,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "lib/constants.ts",
+							"fileName": "src/lib/constants.ts",
 							"line": 9,
 							"character": 19
 						}
@@ -1348,7 +1348,347 @@
 			],
 			"sources": [
 				{
-					"fileName": "lib/constants.ts",
+					"fileName": "src/lib/constants.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 66,
+			"name": "\"test/display\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/display.ts",
+			"children": [
+				{
+					"id": 67,
+					"name": "date",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/display.ts",
+							"line": 5,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(2019, 2, 9, 16, 20, 35, 1)"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						67
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/display.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 60,
+			"name": "\"test/display-afternoon\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/display-afternoon.ts",
+			"children": [
+				{
+					"id": 61,
+					"name": "date",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/display-afternoon.ts",
+							"line": 5,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(2019, 2, 9, 16, 20, 35, 1)"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						61
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/display-afternoon.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 62,
+			"name": "\"test/display-morning\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/display-morning.ts",
+			"children": [
+				{
+					"id": 63,
+					"name": "date",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/display-morning.ts",
+							"line": 5,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(2019, 2, 9, 4, 20, 35, 1)"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						63
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/display-morning.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 64,
+			"name": "\"test/display-zeroes\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/display-zeroes.ts",
+			"children": [
+				{
+					"id": 65,
+					"name": "date",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/display-zeroes.ts",
+							"line": 5,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(2019, 2, 9, 0, 0, 0, 0)"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						65
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/display-zeroes.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 68,
+			"name": "\"test/displayUTC\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/displayUTC.ts",
+			"children": [
+				{
+					"id": 70,
+					"name": "date",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/displayUTC.ts",
+							"line": 6,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(localTime.getTime() - (localTime.getTimezoneOffset() * 60000))"
+				},
+				{
+					"id": 69,
+					"name": "localTime",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "test/displayUTC.ts",
+							"line": 5,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Date"
+					},
+					"defaultValue": "new Date(2019, 2, 9, 16, 20, 35, 1)"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						70,
+						69
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/displayUTC.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 71,
+			"name": "\"test/template\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/runner/work/timestamp/timestamp/test/template.ts",
+			"children": [
+				{
+					"id": 72,
+					"name": "extractParsedTemplate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 73,
+							"name": "extractParsedTemplate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 74,
+									"name": "timestamp",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 16,
+										"name": "Timestamp"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 13,
+									"name": "TimestampTemplateEntry"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "test/template.ts",
+							"line": 4,
+							"character": 30
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						72
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test/template.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -1362,7 +1702,13 @@
 			"children": [
 				9,
 				56,
-				1
+				1,
+				66,
+				60,
+				62,
+				64,
+				68,
+				71
 			]
 		}
 	]
